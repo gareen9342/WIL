@@ -18,10 +18,18 @@ Today I Learned 🖥
 - aboutAlgorithm
 알고리즘 지식
 
+### 개발언어 관련 정리한 것 
+
+- lang_Java
+Java 
+
+- lang_Javascript
+Javascript 
+
 ### 코딩테스트 문제 풀이
 
 - codingTestJava
-Java 언어로 푼 코딩테스트
+Java 언어로 푼 코딩테스트 문제
 
 - codingTestJs
-Javascript 언어로 푼 코딩테스트.
+Javascript 언어로 푼 코딩테스트 문제
