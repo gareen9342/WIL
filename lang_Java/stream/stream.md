@@ -76,20 +76,17 @@ identity : 계산을 위한 초기값으로 스트림이 비어서 계산할 내
 combiner : 병렬(parallel) 스트림에서 나눠 계산한 결과를 하나로 합치는 동작하는 로직.
 
 ### Collecting
-collect 메소드는 또 다른 종료 작업이다. Collector 타입의 인자를 받아서 처리하는데. Collectors객체에서 제공하고 있다. 
+collect 메소드는 또 다른 종료 작업이다. Collector 타입의 인자를 받아서 처리하는데.
+Collectors객체에서 제공하고 있다. 
 
 - Collectors.toList()
 
-_List<String>_ collectorCollection =
-  productList.stream()
-    .map(Product::getName)
-    .collect(Collectors.toList());
+    _List<String>_ collectorCollection =
+    productList.stream().map(Product::getName).collect(Collectors.toList());
 
 - Collectors.joining() 
 스트림에서 작업한 결과를 하나의 스트링으로 이어 붙일 수 있습니다.
 
-String listToString = 
- productList.stream()
-  .map(Product::getName)
-  .collect(Collectors.joining());
-// potatoesorangelemonbreadsugar
+    String listToString = productList.stream().map(Product::getName)
+    .collect(Collectors.joining());
+

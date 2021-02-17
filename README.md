@@ -1,35 +1,35 @@
 # TIL
-Today I Learned 🖥
+Today I Learned 🖥   
 그날 그날 배운 것을 업데이트 합니다.
 
 ## 카테고리 설명
 
 ### 개발 공부한 것 정리 (about~)
 
-- aboutServer 
+- *aboutServer*       
 서버 관련 지식
 
-- aboutNetwork 
+- *aboutNetwork*    
 네트워크 관련 지식
 
-- aboutDataStructure
+- *aboutDataStructure*   
 자료구조
 
-- aboutAlgorithm
+- *aboutAlgorithm*   
 알고리즘 지식
 
 ### 개발언어 관련 정리한 것 
-
-- lang_Java
+   
+- *lang_Java*   
 Java 
 
-- lang_Javascript
+- *lang_Javascript*   
 Javascript 
 
 ### 코딩테스트 문제 풀이
 
-- codingTestJava
+- *codingTestJava*   
 Java 언어로 푼 코딩테스트 문제
 
-- codingTestJs
+- *codingTestJs*   
 Javascript 언어로 푼 코딩테스트 문제
