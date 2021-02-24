@@ -32,7 +32,8 @@
 }
 ```
 
-
+   
+또한 사실은 알고리즘 풀이에 많이 쓰이는 이런 재귀적 풀이도 있다. 
 
 ```javascript
 function gcdlcm(a, b) {
