@@ -57,7 +57,7 @@ Javascript 언어로 푼 코딩테스트 문제
 
 ### 정리 노트   
 
-- *dictionary*
+- *dictionary*   
 필요한 것들을 찾아서 쓸 수 있도록 정리한 것
 
 - *devLog*   
