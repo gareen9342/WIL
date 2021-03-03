@@ -157,3 +157,19 @@ git co e5d33ad
 - squash
     - 대상 브랜치의 커밋들을 하나의 커밋으로 합쳐서 merge
     - `git merge --squash master`
+
+## fork   
+
+fork 는 다른 사람의 github repository에서 나의 Github repository로 복제하는 기능이다. 
+또한 기존 repository 에 새로운 커밋이 생기면 이는 그대로 나의 repository로 반영할 수 있다. 
+그저 다른 이의 프로젝트를 가져다가 사용하기만 하는 clone과는 달리 그 프로젝트에 pull request 를 하게되면 original repository 에서 허가 하게 된 경우 original repository를 변경시킬 수 있다.
+
+## Star   
+
+쉽게 말해 좋아요 같은 역할을 한다.
+이를 통해 관심있는 프로젝트나 레파지토리를 북마크 할 수 있다.
+
+## clone   
+
+관심있는 repository를 복사해서 사용할 수 있다. 
+원본에는 영향이 없다.
