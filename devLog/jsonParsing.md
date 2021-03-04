@@ -16,7 +16,7 @@ data를 출력했더니
 자꾸 이상해서 쳐다본 후에 JSON.parse 로 출력했더니..... 그랬더니 이쁜 오브젝트가 출력되었고 나는 잠을 잘 수 있는 사람이 되었다 ㅠㅠ   
 
 이건 콘솔에 출력해 본 결과물!      
-![json](./images/json.png)   
+![json](../images/json.png)   
 
 ```javascript
     console.log(data)
