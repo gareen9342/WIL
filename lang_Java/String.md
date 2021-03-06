@@ -25,7 +25,7 @@ new 연산자를 통해 문자열을 생성하더라도 String  Pool에 등록�
 
 String 과 다르게 StringBuilder, StringBuffer클래스는 변할 수 있다.
 객체가 생성될 때 힙영역에 생성
-- 속도는 StringBuilder가 조금 더 빠르며, 데이터 안정성은 StringBuffer 가 조금 더 좋다.
+속도는 StringBuilder가 조금 더 빠르며, 데이터 안정성은 StringBuffer 가 조금 더 좋다.
 연산시 (append과 같은) 주소의 변경 없이 기존 객체의 공간이 부족하게 되면 기존 버퍼의 크기를 증가시키면서 새로운 문자열을 더해준다.  
 
 **연산이 많아질 수록 String클래스보다 성능이 낫다**
