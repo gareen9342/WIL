@@ -24,3 +24,5 @@ data를 출력했더니
     console.log(data.url);
     console.log(JSON.parse(data).url);
 ```
+
+-> 최근에 에이젝스를 더 공부하면서 알게되었다. 에이젝스에서는 응답 데이터를 dataType에 json을 써줘야 파싱이 된다. 내가 왜 헷갈렸는지 깨닫게 되었다 ㅠㅠ
