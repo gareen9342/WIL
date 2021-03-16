@@ -6,44 +6,29 @@ https://www.acmicpc.net/problem/1149
 
  ```java
     
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
 
-        int[][] colors = new int [N][N];
+        int[][] colors = new int [N][3];
         for(int i = 0; i < N ; i++){
-            for(int k = 0; k < N ; k++){
+            for(int k = 0; k < 3 ; k++){
                 colors[i][k] = sc.nextInt();
             }
         }
         int[][] d = new int [N][3];
         d[0] = colors[0];
         // 수 세팅 끝
-        for(int i = 1 ; i < N; i++){
-            for( int j = 0 ; j < 3 ; j++ ){
-                if( j == 0 ){
-                    d[i][j] = min(d[i-1][1] , d[i-1][2]);
-                }
-                if( j == 1 ){
-                    d[i][j] = min(d[i-1][0] , d[i-1][2]);
-                }
-                if( j == 2 ){
-                    d[i][j] = min(d[i-1][0] , d[i-1][1]);
-                }
-                d[i][j] += colors[i][j];
-            }
+        for (int i=1; i<N; i++) {
+            d[i][0] = Math.min(d[i-1][1], d[i-1][2]) + colors[i][0];
+            d[i][1] = Math.min(d[i-1][0], d[i-1][2]) + colors[i][1];
+            d[i][2] = Math.min(d[i-1][0], d[i-1][1]) + colors[i][2];
         }
 
         // get min val
-        int result = 1000;
-        for( int i = 0; i < 3; i ++){
-            int temp = d[N-1][i];
-            result = result < temp ? result : temp;
-        }
-
-        System.out.println(result);
+        System.out.println(Math.min(Math.min(d[N-1][0],d[N-1][1]),d[N-1][2]));
 
     }
 ```
