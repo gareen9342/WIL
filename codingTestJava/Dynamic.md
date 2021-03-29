@@ -144,3 +144,28 @@ public class Dynamic2 {
         return d[a][b][c];
     }
 }```
+
+## 2 * n 타일링 (백준)
+이 문제 백준이랑 프로그래머스에도 있었다. 이 전의 값을 가져와서 d[n] = d[n-1] (끝이 세로 모양 타일이 올 떄) + d[n-2] 끝이 가로 모양 타일이 올 떄)   
+이렇게 두 가지를 더해서 저장하며 연산
+```java
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        int[] d = new int[n + 1];
+        d[0] = 1;
+
+        for(int i = 1; i <= n ; i++){
+            d[i] = i == 1 ? d[0] : d[i-1] + d[i-2];
+            d[i] %= 10007;
+        }
+
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        bw.write(d[n]+"");
+        bw.flush();
+        bw.close();
+        br.close();
+    }
+```
