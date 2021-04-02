@@ -4,14 +4,14 @@ Today I Learned 🖥
 
 ------------------------------------------------------------------------
 
-## commit convention & naming convention  
+## committing convention & naming convention  
 
 ### naming convention
 - 문서의 제목은 50자를 넘기지 않도록 유의한다.    
 - 영어로 작성하며, 낙타표기법을 준수한다.  
 - 제목만 봐도 무슨 내용인지 알 수 있도록 적는다.   
   
-### commit convention
+### committing convention
 
 - **수정시**
 1. fix : 버그 수정
@@ -65,6 +65,6 @@ Javascript 언어로 푼 코딩테스트 문제
 
 ### 면접 준비   
 
-- *preparingInterview*  
+- *preparingForInterview*  
 
 
