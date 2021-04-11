@@ -74,7 +74,7 @@ run();
 
 →thisThrows()가 async 메서드이다.
 
-→ 우리는 thisThrows 에서  에러를 발생시킨다. 그런데 우리는 rejected  된 promise 를 펑션으로 리턴 받는다.  
+→ 우리는 thisThrows 에서  에러를 발생시킨다. 그런데 우리는 rejected  된 promise 를 펑션으로 리턴 받는다. 
 
 **→ 결국 이 리턴 값이 await 키워드로 직결되고,  await은 rejected를 리턴 받았음을 알고 마치 핸들링 되지 않은 프로미스 rejection 처럼 에러를 전파시킨다.** 
 
