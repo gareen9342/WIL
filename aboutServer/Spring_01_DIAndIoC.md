@@ -18,12 +18,9 @@ POJO(Plain Old Java Object) 기반 개발 으로**
 
 ## DI(Dependency Injection)
 
-**객체간의 결합을 느슨하게 하는 스프링의 핵심 기술, 주입기능** 
-**약결합?**
-**인터페이스를** 사용하여 객체 간 결합도를 낮추는 것
-
-- HelloApp 은 MessageBean 이라는 인터페이스를 통해 객체를 사용.
-- 일반적으로 팩토리 메서드를 활용하여, 사용할 객체(MessageBeanKo or MessageBeanEn) 를 생성한다. MessageBean 이라는 이름의 MessageBeanKo의 객체가 생성되든 MessageBeanEn의 객체가 생성되든 HelloApp은 수정될 사항이 없다.
+**객체간의 결합을 느슨하게 하는 스프링의 핵심 기술, 주입기능**    
+**약결합?**   
+**인터페이스를** 사용하여 객체 간 결합도를 낮추는 것    
 
 ### 의존 객체를 주입하는 다양한 방법
 
