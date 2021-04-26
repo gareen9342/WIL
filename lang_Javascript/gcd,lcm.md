@@ -20,8 +20,6 @@
      mYak.add(m / i);
    }
  }
- nYak = [...nYak].sort((a, b) => a - b);
- mYak = [...mYak].sort((a, b) => a - b);
  // 두 집합의 교집합이 공약수.
     const intersection = [...nYak].filter((x) => mYak.includes(x));
   var answer = [
