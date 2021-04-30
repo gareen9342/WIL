@@ -32,9 +32,11 @@ REST의 제약 조건들을 제대로 지키면서 REST아키텍처를 만드는
 
 서버가 자바 애플릿이나 자바스크립트 실행코드의 제공을 통해 클라이언트가 실행시킬 수 있는 로직을 전송하여 기능을 확장시킬 수 있다. 
 
-### 인터페이스 일관성
+### 인터페이스 일관성   
 
 아키텍처를 단순화시키고 작은 단위로 분리함으로써 클라이언트-서버의 각 파트가 독립적으로 개선될 수 있도록 해준다. 
+
+
 ---
 
 ## REST 인터페이스 원칙에 대한 가이드
@@ -107,7 +109,6 @@ public void registerForm(){
 @RestController//클래스 레벨 요청 경로 지정
 @RequestMapping("/boards")
 public class BoardController{
-	private static final Loger logger = LoggerFactory.getLogger(BoardController.class)
 
 //하위 요청 경로 지정
 	@RequestMapping("/register")
