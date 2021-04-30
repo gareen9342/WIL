@@ -5,10 +5,10 @@
 프로그램의 골격이 되는 기본 코드  
 개발자는 프레임워크를 기반으로 소스코드를 작성하여 소프트웨어를 완성시키면 된다.
 
-## Library
+## Library?
 
-Library?특정 목적을 위해 사용하는 함수들을 모듈화 시킨 것.
-(*.jar)
+특정 목적을 위해 사용하는 함수들을 모듈화 시킨 것.
+
 
 **EJB(Enterprise JavaBean) 기반 개발 에서
 POJO(Plain Old Java Object) 기반 개발 으로**
@@ -19,6 +19,7 @@ POJO(Plain Old Java Object) 기반 개발 으로**
 ## DI(Dependency Injection)
 
 **객체간의 결합을 느슨하게 하는 스프링의 핵심 기술, 주입기능**    
+
 **약결합?**   
 **인터페이스를** 사용하여 객체 간 결합도를 낮추는 것    
 
