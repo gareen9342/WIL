@@ -5,14 +5,6 @@ Spring 에서는 서버가 시작될 때  web.xml에 설정해 놓은 설정 정
 
 원래 Spring MVC에서는 xml을 활용하여 Bean을 등록하지만, 프로젝트의 규모가 커짐에 따라 사용하는 요소들을 전부 등록하는 것이 어려워지게 되었다. 따라서 @Component, @Repository, @Service, @Controller와 같은 어노테이션이 생겨났고, 발전하다 결국 설정파일도 자바 객체로 관리하여 주입하게 된다. 
 
-Spring MVC 에서의 실행흐름은 이러하다.( 이걸 알고 설정파일을 어떻게 구성하는지 흐름대로 하면 편함)
-
-1. 클라이언트의 request를 DispatcherServlet에 전달
-2. DispatcherServlet은 HandlerMapping을 통하여 Controller객체 구성
-3. DispatcherServlet은 Controller객체의 handler메소드를 호출하여 클라이언트의 요청을 처리한다. 
-4. handler 메소드는 처리 결과 정보를 담은 ModelAndView 객체를 리턴한다. 
-5. View는 클라이언트에 전송할 응답을 생성한다. 
-
 ## Web.xml → WebApplicationInitializer
 
 WebApplicationInitializer을 implements 받는다. → web.xml을 변경하려고..
