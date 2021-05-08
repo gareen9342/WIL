@@ -92,3 +92,69 @@ public class Main {
 
 }
 ```
+
+## 집합
+
+https://www.acmicpc.net/problem/11723
+
+기억해야 할 점 : (1 << 20) - 1 하게 될 경우 2진수 변환시 (Integer.toBinaryString이용) 1 이 1의 자리 부터 20번쨰 자리까지 생성인데    
+1 << n으로 계산을 하게 될 경우 0의 자리가 있다고 생각하고 계산을 하게 된다 (0의 자리 까지 있는 집합으로 표현이 된다.)   
+그렇기 때문에 입력을 받을 때 1을 빼주거나, 아니면 (1 << 21) - 1로 바꿔야 하는데 여기 문제에서는 1~20 의 집합이란 조건이었기 때문에 바꿔주었다.   
+
+```java
+
+public class BitMask {
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int M = Integer.parseInt(br.readLine());
+        int S = 0;
+
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        while( M > 0 ){
+            String [] str = br.readLine().split(" ");
+            String inpt = str[0];
+
+            switch (inpt){
+                case "add" :{
+                    int n = Integer.parseInt(str[1]) - 1;
+                    S |= (1 << n);
+                    break;
+                }
+                case "check" : {
+                    int n = Integer.parseInt(str[1]) - 1;
+                    String s = (S & (1 << n)) > 0 ? "1\n" : "0\n";
+                    bw.write(s);
+                    break;
+                }
+                case "remove" : {
+                    int n = Integer.parseInt(str[1]) - 1;
+                    S &= ~(1 << n);
+                    break;
+                }
+                case "toggle" : {
+                    int n = Integer.parseInt(str[1]) - 1;
+                    S ^= (1 << n);
+                    break;
+                }
+                case "all" : {
+                    S = (1 << 20) - 1;
+                    break;
+                }
+                case "empty" : {
+                    S = 0;
+                    break;
+                }
+                default :
+                    break;
+            }
+
+
+            M--;
+        }
+
+        bw.flush();
+    }
+}
+
+```
