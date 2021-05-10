@@ -1,4 +1,4 @@
-# 파이썬의 자료형
+# 파이썬의 자료형, 연산자
 
 ## 자료형
 
@@ -229,3 +229,64 @@ print(list(dict02.values())[1])
 - clear : key value 쌍을 모두 지우기
 - get :  key로 value 얻기
 - in :  해당 key가 딕셔너리 안에 있는지 조사하기
+
+## 연산자
+
+- "*, -, + / "에 대해선 모두 일반적으로 쓰이는 것과 같지만
+- **으로 x의 n승
+- // 으로 몫을 추출함
+- [a,b,c]로 배열의 값들을 슬라이스해서 추출
+- [start : end ] -> start ~ **end -1**
+[start : end : step] start ~ end  -1 까지 step 만큼씩
+- in, not in은 어떤 요소가 리스트에 있는지 확인을 할 수 있다.
+- -1의 인덱스는 맨 마지막에서 첫 번째 값
+- 스텝 칸에 값을 입력하면 입력한 값 만큼 건너뛰면서 슬라이싱한다. 입력하지 않으면 기본값인 1이 적용된다.
+***음수 값을 넣으면 뒤에서부터 건너뛰면서 갖고옴***
+
+```python
+# 산술연산
+a = 21
+b = 2
+print(a + b)
+print(a - b)
+print(a * b)
+print(a ** b) #a의 b승
+print(a / b)
+print(a // b) #몫
+print(a % b)
+
+# 비교연산
+a, b = 5, 3
+print(a == b)
+print(a == b)
+print(a != b)
+print(a > b)
+print(a >= b)
+print(a is b)
+print(a is not b)
+
+#범위 연산
+list01 = list(range(100))
+# print(list01)
+
+#[start : end ] -> start ~ end-1
+#[start : end : step] start ~ end  -1 까지 step 만큼씩
+print(list01[12 : 50])
+print(list01[12:49:3])
+# print(list01)
+
+start01 = 'Hello world!'
+print(start01[0 : 5])
+print(start01[6 : 11])
+# -1
+print(start01[-1]) # ! ->맨 마지막에서 첫 번째 값을의미한다.
+print(start01[-1:])# ! -> end 를 비우면 끝까지 출력, 
+print(start01[: -1])# Hello world 
+print(start01[:: -1])# !dlrow olleH
+
+# in, not in
+start02 = [1,2,3,4,5,6]
+print(3 in start02)
+print(6 not in start02)
+print(9 not in start02)
+```
