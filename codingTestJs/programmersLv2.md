@@ -55,4 +55,55 @@ function solution(record) {
   return answer.map(x => `${ids[x[1]]}님이 ${x[0] === "Enter" ? "들어왔습니다." : "나갔습니다."}`);
 }
 
+```   
+
+## 타켓 넘버
+```javascript
+function solution(numbers, target){
+
+  let result = 0;
+  dfs(0)
+  numbers[0]*=-1;
+  dfs(0)
+  function dfs (n){
+    // console.log(n)
+    if ( n < numbers.length - 1) {
+      numbers[n + 1] *= 1;
+      dfs(n + 1);
+      numbers[n + 1] *= -1;
+      dfs(n + 1);
+    } else {
+      const res = numbers.reduce((x,y) => x + y);
+      // console.log(res, numbers)
+      if(res === target){
+        result ++
+      }
+
+    }
+  }
+  return result;
+}
+
+```
+
+## 행렬의 곱셈
+
+```javascript
+function solution(arr1, arr2) {
+  const answer = new Array(arr1.length).fill().map(x=>new Array(arr2[0].length))
+
+  for( let i = 0; i < answer.length ; i++ ){
+    for(let j = 0; j < answer[i].length; j++ ){
+      let temp = 0;
+      for(let n = 0; n < arr1[i].length; n++){
+        temp += arr1[i][n] * arr2[n][j];
+      }
+      answer[i][j] = temp;
+      // console.log(temp, i,j)
+    }
+  }
+
+  return answer;
+}
+
 ```
