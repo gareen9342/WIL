@@ -58,7 +58,7 @@ db.collection.find({}, {_id : 0, name : 1})
 
 텍스트 인덱스 : [text index](https://docs.mongodb.com/manual/core/index-text/)    
 `db.collections.createIndex({"subject":"text"})`    
-$where : 자바스크립트 문법을 사용해 검색   
+- $where : 자바스크립트 문법을 사용해 검색   
 ex ) this.field1 === this.field2    
 
 ## Array
