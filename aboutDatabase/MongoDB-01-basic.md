@@ -28,7 +28,7 @@ NOSQL 데이터베이스. javascript 문법으로 디비를 제어할 수 있다
 3. use <dbname> : 해당 database로 변경
 4. show collections : 현재  database의 collection 목록
 
-변수에 명령어를 저장하거나 또는 리턴되는 값들을 저장 할 수 있다.    
+cursor에 명령어를 저장하거나 또는 리턴되는 값들을 저장 할 수 있다.    
 hasNext(), forEach(), toArray()등을 사용하여 저장된 document들을 사용할 수 있다.    
 
 ## 예약된 db name
