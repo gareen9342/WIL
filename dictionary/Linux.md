@@ -17,8 +17,8 @@ MINIX를 참조
 - SuSE 
 Suse : 유럽에서 많이 사용
 - POSIZ ( Portable Operating System Interface ) : OS표준
-- LSB ( Linux Standard Bse ) :Linux 표준
--POSIX 표준에 맞추고, 일부 확장
+- LSB ( Linux Standard Bse ) : Linux 표준
+- POSIX 표준에 맞추고, 일부 확장
 - file system 계층 등의 구조를 표준화
 
 ## file system
@@ -41,11 +41,11 @@ Suse : 유럽에서 많이 사용
 
 ## 사용자 관리
 
-- 비밀번호가 없는 사용자는 사용 불가
-- superuser로 로그인 하는 것은 지양
-- /etc/sudoers 파일을 이용하여 특정 사용자에게 관리 명령 부여 가능
-- /var/log/secure 파일에 sudo 명령  logging
-- 한 사용자가 여러 개의 그룹에 포함 가능
+비밀번호가 없는 사용자는 사용 불가   
+superuser로 로그인 하는 것은 지양    
+/etc/sudoers 파일을 이용하여 특정 사용자에게 관리 명령 부여 가능    
+/var/log/secure 파일에 sudo 명령  logging   
+한 사용자가 여러 개의 그룹에 포함 가능    
 
 ```html
 su [사용자명] (switch user) : 해당 사용자로 변경(관리자의 비밀번호 필요)   
@@ -111,13 +111,13 @@ rpm -u[옵션] rpm-package : rpm-package 업그레이드
 
 **YUM : Yellowdog Updater Modified**
 
-- rpm : 기반의 package tool
-- 패키지를 분석하여 의존성 해결 ( 자동 설치)
-- /etc/yum.repos.d 에 패키지 저장소 파일 저장
+: rpm : 기반의 package tool
+: 패키지를 분석하여 의존성 해결 ( 자동 설치)
+: /etc/yum.repos.d 에 패키지 저장소 파일 저장
 
 ```html
 yum [-y] install package-name package 설치
- yum update package-name
+yum update package-name
 yum upgrade package-name
 yum [-y] erase package-name
 yum [-y] remove package-name
