@@ -107,3 +107,34 @@ function solution(arr1, arr2) {
 }
 
 ```
+
+
+## 예상 대진표
+```javascript
+function solution(n,a,b){
+
+  let count = 0;
+  
+  while(count < n){
+    a = Math.ceil(a/2);
+    b= Math.ceil(b/2);
+    count ++;
+    if(a === b) break;
+  }
+
+  return count;
+  
+}
+```
+
+## 가장 큰 수
+```javascript
+function solution(numbers) {
+  const answer = numbers
+    .map((i) => i + "")
+    .sort((a, b) => b + a - (a + b))
+    .join("");
+
+  return answer[0] === "0" ? "0" : answer;
+}
+```
