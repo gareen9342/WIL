@@ -1,4 +1,4 @@
-# [Django]
+# [Django] - Setting, 기본 개념
 
 ## Django 특징
 
@@ -86,7 +86,7 @@ def index(request):
     python manage.py runserver <port 변경시 localhost:8787과 같이 추가>
 ```
 
-4. views 세팅
+5. views 세팅
 
 hello world 후에 hello 루트 안에서 urls.py 에
 ```python
@@ -102,7 +102,7 @@ urlpatterns = [
 ]
 ```
 
-5. 하위 트리 구성 - (내부에 다른 프로젝트)
+6. 하위 트리 구성 - (내부에 다른 프로젝트)
 
 
 ```python
@@ -156,7 +156,7 @@ urlpatterns = [
 ```
 
 
-6. Tempate setting
+7. Tempate setting
 
 _**hello>setting.py**_
 
@@ -178,7 +178,7 @@ TEMPLATES = [
 ]
 ```
 
-7. 문법 예시
+8. 문법 예시
 
 ```html
     ============ if01
