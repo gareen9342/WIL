@@ -24,7 +24,7 @@ libuv 라이브러리는 노드의 특성인 **이벤트 기반, 논블로킹 I/
 ### 호출스택을 이용하여 setTimeout 함수의 실행과정을 설명해보자
 
 ```javascript
-function run (){
+const run = () => {
 	console.log("3초 후 실행");
 };
 console.log('시작');
@@ -58,6 +58,30 @@ console.log("끝");
 
 예시로는 오래 걸리는 함수를 setTimeout을 0초를 걸어 백그라운드로 보내버리는 법이 있다.     
 이는 코드를 논블로킹으로 만들기 위해 사용하는 기법이다. (사실 노드에서는 다른 방식을 주로 이용함.)    
+===>  _**예제**_    
+
+- 바꾸기 전
+
+```javascript
+const longRunningTask = () => {
+    //오래 걸리는 작업
+    console.log('작업 끝');
+}
+console.log('시작');
+longRunningTask();
+console.log("다음 작업");
+```
+- 바꾼 후
+
+```javascript
+const longRunningTask = () => {
+    //오래 걸리는 작업
+    console.log('작업 끝');
+}
+console.log('시작');
+setTImeout(longRunningTask(),0);
+console.log("다음 작업");
+```
 
 논 블로킹 방식으로 코드를 작성하더라도 코드가 전부 직접 작성한 것이라면 전체 소요시간이 짧아지지는 않는다.     
 코드가 전부 동시에 실행지 않기 떄문.    
