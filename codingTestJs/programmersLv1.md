@@ -1,49 +1,49 @@
 # programmers Lv1
 
 ## 소수만들기
-최근에 공부한 알고리즘으로 풀어보았다.   
-재귀적으로 호출하며 이전 인덱스를 참조하지 않게끔 구현   
+
+최근에 공부한 알고리즘으로 풀어보았다.  
+재귀적으로 호출하며 이전 인덱스를 참조하지 않게끔 구현  
 이런 유형을 좀 더 많이 공부해봐야할 듯...
 
 ```javascript
-
-function solution(nums){
+function solution(nums) {
   let answer = 0;
-  let basket = [];//임시적으로 담을 값들을 만들어 주는 배열 
+  let basket = []; //임시적으로 담을 값들을 만들어 주는 배열
   const numsL = nums.length;
-  
-  function go(idx, start){ // 몇 번쨰 인덱스를 채울 것인지, 어디 인덱스부터 시작할 것인지
-    if(idx === 3){
-      const ans = basket.reduce((x , y) => x+y);
-      if(isPrime(ans))
-        answer ++;
-      return
+
+  function go(idx, start) {
+    // 몇 번쨰 인덱스를 채울 것인지, 어디 인덱스부터 시작할 것인지
+    if (idx === 3) {
+      const ans = basket.reduce((x, y) => x + y);
+      if (isPrime(ans)) answer++;
+      return;
     }
-    for(let i = start; i < numsL; i++){
+    for (let i = start; i < numsL; i++) {
       basket[idx] = nums[i];
       go(idx + 1, i + 1);
     }
-
   }
 
-  go(0,0);
+  go(0, 0);
   return answer;
 }
 
-function isPrime(n){
-    if(n == 1){
+function isPrime(n) {
+  if (n == 1) {
+    return false;
+  }
+  for (let i = 2; i * i <= n; i++) {
+    if (n % i === 0) {
       return false;
     }
-    for (let i = 2; i * i <= n ; i++){
-      if(n % i === 0){
-        return false;
-      }
-    }
-    return true;
   }
+  return true;
+}
 ```
 
 ## 키패드
+
 ```javascript
 function solution(numbers, hand) {
   hand = hand === "left" ? "L" : "R";
@@ -92,17 +92,17 @@ function solution(numbers, hand) {
     }
   });
 
-  return answer.join('');
+  return answer.join("");
 }
-```   
+```
 
 ## 폰켓몬
 
 ```javascript
-function solution (nums){
+function solution(nums) {
   const temp = [...new Set(nums)].length;
   const maxVal = nums.length / 2;
-  return maxVal > temp ? temp : maxVal ;
+  return maxVal > temp ? temp : maxVal;
 }
 ```
 
@@ -119,7 +119,7 @@ function solution(n, lost, reserve) {
       reserve.splice(curIdx, 1);
       continue;
     }
-       if (nextIdx > -1) {
+    if (nextIdx > -1) {
       reserve.splice(nextIdx, 1);
       continue;
     }
@@ -127,9 +127,30 @@ function solution(n, lost, reserve) {
       reserve.splice(prevIdx, 1);
       continue;
     }
-   
+
     n--;
   }
   return n;
+}
+```
+
+## 약수의 개수와 덧셈
+
+갑자기 생각났다 나 월코챌 나갔던거.. 낮잠자다 이것만 풀었던거...
+
+```javascript
+function solution(left, right) {
+  const arr = new Array(right - left + 1).fill(0).map((x, idx) => left + idx);
+  return arr.reduce((x, y) => (x += isYacksuJacksu(y) ? y : -y), 0);
+}
+function isYacksuJacksu(n) {
+  let count = 0;
+
+  for (let i = 1; i * i <= n; i++) {
+    if (n % i === 0) {
+      count += n / i !== i ? 2 : 1;
+    }
+  }
+  return count % 2 === 0;
 }
 ```
