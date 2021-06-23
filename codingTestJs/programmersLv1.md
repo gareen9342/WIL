@@ -136,7 +136,7 @@ function solution(n, lost, reserve) {
 
 ## 약수의 개수와 덧셈
 
-갑자기 생각났다 나 월코챌 나갔던거.. 낮잠자다 이것만 풀었던거...
+갑자기 생각났다 나 월코챌 나갔던거.. 낮잠자다 이거랑 비트연산만 풀었던거... 비트연산 두 갠가 시간초과난거 디버깅해야하는거.. 아
 
 ```javascript
 function solution(left, right) {

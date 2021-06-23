@@ -1,55 +1,88 @@
 # Java 관련 면접 질문 대비하기
 
-## Java의 대표 Collection 에는 어떤 것들이 있나요?
+## java의 특징
 
-자바의 대표 Collection에는 List, Map, Set, Stack, Queue와 같은 것들이 있습니다. 
+- 객체란
+    클래스의 인스턴스를 객체라고 한다. 클래스는 코드를 모아서 정의한 것 뿐이므로,    
+    특정 메모리를 할당받지는 않지만,   
+    객체는 JVM이 new()를 인식하여 인스턴스가 생성되는 그 순간, 특정 메모리를 할당받아 가지게 된다.   
 
-이 추상화된 Collection 인터페이스 아래, 특정한 기법으로 구현된 자료구조가 들어갑니다. 예를 들어 List라는 인터페이스에는 구현방법에 따라  ArrayList가 들어갈 수도 LinkedList 가 들어갈 수도 있습니다. 
+- 객체지향 프로그래밍 언어    
+  : 코드 재사용성 놓아진다, 협업에 최적화되어있고 유지보수에 용이하다.   
+- 자동 메모리 관리   
+- 운영체제에 독립적 (JVM) : JVM이 별도의 Java Compiler로 사용자의 코드를 Byte코드로 변환한다.    
+- 멀티 쓰레드 지원 : 하나의 프로그램에서 여러 개의 쓰레드가 동시에 실행할 수 있는 환경   
+- 동적 로딩 지원 : 애플리케이션이 실행될 때 모든 객체가 생성되지 않고, 객체가 필요한 시점에 클래스를 동적 로딩하여 생성    
 
-## List에 대해 설명해주세요.
 
-리스트는 배열과 비슷한 자바의 자료형으로 배열보다 편리한 기능을 많이 가지고 있습니다. 
 
-List 에는 대표적으로 ArrayList와 LinkedList가 있습니다. ArrayList는 Vector를 개선한 배열로 구현된 List 입니다. 
+# 객체 지향
 
-배열과 같은 자료구조이기 때문에 리스트의 연산 수행시간 속도는 배열과 같다. 
+## 1. 상속  
+- 상속이란 부모 클래스의 메서드와 변수를 자식 클래스에서 사용할 수 있게 해주는 것    
+- 예외 : private 접근자를 가진 필드 및 메서드는 자식이 물려받을 수 없다.    
+- 부모와 자식 클래스가 서로 다른 패키지에 있다면, 부모의 default 접근 제한을 갖는 필드 및 메서드도 자식이 물려 받을 수 없다.    
 
-LinkedList는 다음 노드의 주소를 기억하고 있는 List 로, 배열에 비해 삽입과 삭제가 간단하다는 장점이 있다. 하지만 탐색의 경우에 첫 번쨰 노드부터 탐색해야 하므로 상대적으로 느리다는 단점이 있다.
+## 2. 캡슐화 
+- 내부의 코드를 캡슐처럼 보호하기 위하여 사용한다.    
+- 캡슐화를 위하여 모든 인스턴스 변수를 private으로 명시하고, setter와 getter 메서드를 만들어 접근하게 한다.   
+
+## 3. 다형성
+- 하나의 객체를 여러가지 타입으로 해석할 수 있는 기술    
+
+## 4. 추상
+- 객체를 생성할 수 없는 클래스   
+- 부모 클래스로써의 역할만 하는 클래스   
+- private이 올 수 없다.   
+
+## 5. 인터페이스
+- 메소드 선언만 하고 구현은 되어있지 않은 템플릿    
+- 모든 메서드는 내부적으로 public, abstract 이어야 하는데 다른 클래스에서 구현하여 정의할 수 있어야 하기 떄문이다.    
+- 인터페이스를 구현하는 클래스는 인터페이스에 선언된 모든 메소드를 포함하고 있어야 한다.    
+
+: 자바는 다중 상속을 지원하지는 않지만, 인터페이스를 통해 보강할 수 있다.    
+: 인터페이스는 팀 작업 시에 공동 템플릿으로 이용이 가능하다.     
+
+# 자료구조 
+
+## Java의 대표 Collection?
+
+자바의 대표 Collection : List, Map, Set, Stack, Queue     
+이 추상화된 Collection 인터페이스 아래, 특정한 기법으로 구현된 자료구조가 들어갑니다.    
+예를 들어 List라는 인터페이스에는 구현방법에 따라  ArrayList가 들어갈 수도 LinkedList 가 들어갈 수도 있습니다.   
+
+## List에 대해 설명해주세요.   
+
+리스트는 배열과 비슷한 자바의 자료형으로 배열보다 편리한 기능을 많이 가지고 있습니다.    
+List 에는 대표적으로 ArrayList와 LinkedList가 있습니다. ArrayList는 Vector를 개선한 배열로 구현된 List 입니다.   
+배열과 같은 자료구조이기 때문에 리스트의 연산 수행시간 속도는 배열과 같다.    
+LinkedList는 다음 노드의 주소를 기억하고 있는 List 로, 배열에 비해 삽입과 삭제가 간단하다는 장점이 있다.   
+하지만 탐색의 경우에 첫 번쨰 노드부터 탐색해야 하므로 상대적으로 느리다는 단점이 있다.   
 
 ## Map에 대해 설명해주세요.
 
-Map에는 HashMap, TreeMap, LinkedHashMap 이 있다. 
-
-그 중 HashMap은 가장 일반적으로 사용하는 Map 이다.
-
-HashTable을 사용하며 Key값에 해시함수를 적용하여 나온 index에 value를 저장하는 식이다. 
-
-중복을 허용하지 않으며, 순서가 없다는 것이 특징이라고 할 수 있다. 
-
-TreeMap은 Red-Black Tree자료구조를 이용한 Map이고 Tree 구조 이기 때문에 어느 정도 순서를 보장한다. 
-
-LinkedHashMap은 LinkedList로 구현된 HashMap 이다. 
+Map에는 HashMap, TreeMap, LinkedHashMap 이 있다.    
+그 중 HashMap은 가장 일반적으로 사용하는 Map 이다.   
+HashTable을 사용하며 Key값에 해시함수를 적용하여 나온 index에 value를 저장하는 식이다.   
+중복을 허용하지 않으며, 순서가 없다는 것이 특징이라고 할 수 있다.    
+TreeMap은 Red-Black Tree자료구조를 이용한 Map이고 Tree 구조 이기 때문에 어느 정도 순서를 보장한다.   
+LinkedHashMap은 LinkedList로 구현된 HashMap 이다.   
 
 ## Set에 대해 설명해주세요.
 
-Set에는  HashSet, TreeSet, LinkedHashSet이 있다. 
-
-HashSet은 HashMap에서 Key값이 없는 자료형이고 집합이라고 생각해도 무방하다.
-
-값이 포함되어 있는지 아닌지에만 관심이 있고 순서를 보장하지 않으며, 중복값을 허용하지 않는다. Set중에는 가장 많이 사용된다. 
+Set에는 HashSet, TreeSet, LinkedHashSet이 있다.   
+HashSet은 HashMap에서 Key값이 없는 자료형이고 집합이라고 생각해도 무방하다.    
+값이 포함되어 있는지 아닌지에만 관심이 있고 순서를 보장하지 않으며, 중복값을 허용하지 않는다.   
+Set중에는 가장 많이 사용된다.    
 
 ## Stack, Queue
 
-Stack과  Queue 모두 데이터를 기록하는 자료구조이며,Stack은 마지막에 넣은 요소가 먼저 나오는ㄴ 특징이 있는데에 반해 
-
-Queue는 스택과 반대 개념으로 먼저 들어간 데이터가 먼저 나오는 구조이다. 
-
-Deque 은  스택과 큐를 합친 형태 이다. 
+Stack과 Queue 모두 데이터를 기록하는 자료구조이며,Stack은 마지막에 넣은 요소가 먼저 나오는ㄴ 특징이 있는데에 반해    
+Queue는 스택과 반대 개념으로 먼저 들어간 데이터가 먼저 나오는 구조이다.    
+Deque 은  스택과 큐를 합친 형태 이다.    
 
 ## Array와 ArrayList의 다른 점이 뭔가요?
 
-Array는 길이에 대해서 length변수를 쓰고, ArrayList는 Size()메서드를 사용한다. 
-
-Array는 길이가 고정되어 있지만, ArrayList는 사이즈가 동적인 배열이다. 
-
-Array는 int, byte, char등과 같은 Primitive Type과 Object 모두 담을 수 있지만,ArrayList는 Object 만 담을 수 있다.
+Array는 길이에 대해서 length변수를 쓰고, ArrayList는 Size()메서드를 사용한다.   
+Array는 길이가 고정되어 있지만, ArrayList는 사이즈가 동적인 배열이다.    
+Array는 int, byte, char등과 같은 Primitive Type과 Object 모두 담을 수 있지만, ArrayList는 Object 만 담을 수 있다.   
