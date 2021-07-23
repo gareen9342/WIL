@@ -2,13 +2,16 @@
 
 
 >JPA에서는 단순히 Repository 인터페이스를 생성한 후 JpaRepository<Entity, 기본키 타입> ..등을 상속받으면 기본적인 CRUD가 자동으로 생성된다.     
-기본적으로 네 가지가 있다. <T : Entity의 타입 클래스 , ID : PK 값의 Type>     
+
+
+-> 기본적으로 네 가지가 있다. <T : Entity의 타입 클래스 , ID : PK 값의 Type>     
 
 1. Repository<T, ID>   
 2. CurdRepository<T, ID>   
 3. PagingAndSortingRepository<T, ID>    
 4. JpaRepository<T, ID>   
 
+대표적으로 한 가지만 메모해놓는다.  
 
 ## CRUD Repository interface
 - `long count ()` : 사용 가능한 엔티티 수를 반환한다, 
