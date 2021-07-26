@@ -190,4 +190,22 @@ public class Item {
         this.stockQuantity = restStock;
     }
 }
-```
+```   
+
+
+## cascade란 
+출처 https://velog.io/@max9106/JPA%EC%97%94%ED%8B%B0%ED%8B%B0-%EC%83%81%ED%83%9C-Cascade   
+: _OneToMany 나 ManyToOne에 옵션으로 줄 수 있는 값_   
+Entity의 상태 변화를 전파시키는 옵션    
+Entity에 상태 변화가 있으면 연관되어 있는 Entity에도 상태 변화를 전이시키는 옵션   
+기본적으로는 아무 것도 전이시키지 않음
+
+### Entity 상태값
+1. Transient : 객체를 생성하고, 값을 주어도 JPA 나 hibernate가 그 객체에 간해 아무것도 모름    
+2. Persistent : 저장하고 JPA가 관리하는 상태가 됨. 그러나 .save()를 했다고 해서, 바로 DB에 이 객체에 대한 데이터가 들어가는 것은 아님
+JPA가 persistent상태로 관리하고 있다가, 후에 데이터를 저장한다.
+   
+3. Detached : JPA가 더이상 관리하지 않는 상태, JPA가 제공해주는 기능을 사용하고 싶다면, 다시 Persistent 상태로 돌아가야 함. 
+4. Removed : JPA가 관리하는 상태이긴 하지만, 실제 commit이 일어날 때, 삭제가 일어남. 
+
+이런 상태 변화를 전이시킴....
