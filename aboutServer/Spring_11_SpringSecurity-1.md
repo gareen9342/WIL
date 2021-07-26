@@ -49,6 +49,7 @@ https://ssndwind.tistory.com/71
 
 ### AuthenticationManagerBuilder 로 유저 정보 확인
 inMemoryAuthentication으로 활성화 및 설정이 가능하고 선택적으로 인메모리 사용자 저장소에 값을 채울 수도 있고.   
+데이터 베이스를 이용하여 사용자 정보를 가져와 인증할 수도 있고..   
 
 ```java
 @Override
