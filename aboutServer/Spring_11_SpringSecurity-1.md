@@ -21,7 +21,7 @@ WebSecurityConfigurerAdapter를 상속받게 되면 인증 인가 cors 에러 �
         sessionManagement // 세션 정책을 설정함
         sessionCreationPolicy
 
-        http.authorizeRequests() // 이걸 붙여서 여러 자섹에 대한 접근 처리를 
+        http.authorizeRequests() // 이걸 붙여서 여러 자식에 대한 접근 처리를 
         requestMatchers // 다양한 httpSecurity를 설정하고자 할 때 
         antMatchers
         anyRequest.authenticated()
