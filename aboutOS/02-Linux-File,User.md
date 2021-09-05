@@ -1,29 +1,6 @@
-# Linux
+# File, User 관련
 
-## Linux?
 
-핀란드 헬싱키 대학교의 학생이었던 리누스 토발즈가 처음 개발
-
-MINIX를 참조
-
-![linux1](../images/linux1.png)
-
-- RedHat  
-  → RHEL : 유료     
-  → CentOS : RHEL을 무료로     
-  → Fedora : 빠른 업데이트, 낮은 안정성    
-
-- Debian 계열  
-  → Devian : server, embeded에 주로 사용    
-  → Ubuntu : Debian에 편의성 추가    
-
-- SuSE  
-  Suse : 유럽에서 많이 사용    
-
-- POSIZ ( Portable Operating System Interface ) : OS표준    
-- LSB ( Linux Standard Bse ) : Linux 표준    
-- POSIX 표준에 맞추고, 일부 확장     
-- file system 계층 등의 구조를 표준화     
 
 ## file system
 
@@ -62,6 +39,7 @@ userdel [-r] [사용자명] : 사용자 삭제
 ```
 
 ![linux3](../images/linux3.png)
+
 
 ## file
 
@@ -107,80 +85,3 @@ rm -r dir1 : 디렉토리 삭제
 cp file1 file2 : file 복사 
 mv file1 file2 : file 이동 ( 변경 )
 ```
-
-## package 관련
-
-**RPM : Redhat Package Manager**
-
-: \*.rpm     
-
-: windows의 setup과 비슷한 역할    
-
-```html
-rpm -i[옵션] rpm-package : rpm-package 설치 
-rpm -u[옵션] rpm-package : rpm-package 업그레이드
-```
-
-**YUM : Yellowdog Updater Modified**
-
-: rpm : 기반의 package tool     
-: 패키지를 분석하여 의존성 해결 ( 자동 설치)      
-: /etc/yum.repos.d 에 패키지 저장소 파일 저장      
-
-```html
-yum [-y] install package-name package 설치   
-
-package 업데이트      
-
-yum update package-name     
-yum upgrade package-name     
-
-package 삭제
-yum [-y] erase package-name 
-yum [-y] remove package-name 
-
-package 정보 확인
-yum info package-name  
-```
-
-## text editor
-
-vi : VIsual display editor
-- 가벼운 text editor
-
-vim : VI iMproved
-- vi호환 text editor
-- cui 용 뿐만 아니라 gui도 있음 (대부분 cui사용)
-- vim script : vim에 통합된 스크립트형 언어
-
-## achive
-
-- **tar** : 속도 빠름/ 압축률 낮음 / 확장자 .tar 
-- **gzip** : 속도 보통/ 압축률 보통 / 확장자 .gz 
-- **bzip** : 속도 느림/ 압축률 느림 / 확장자 .bz2 
-
-gzip은 여러 개의 파일을 압축하지 못함 -> 일반적으로 tar와 같이 사용
-
-기본 형태
-**tar [옵션] [파일명]**
-c : tar 압축
-x : tar 압축 해제
-f : 여러 개의 파일
-v : 처리 정보 출력
-
-z : gzip 사용
-j : bzip2 사용
-
-## 추가
-
-cat[파일명] : 파일 내용 보기    
-명령 | 명령 : 명령의 결과를 다른 명령의 입력으로 사용     
-명령 < 파일명 : 파일로부터 입력 (키보드 입력 대신)    
-명령 > 파일명 : 파일로 새로 저장 (모니터 대신)    
-명령 >> 파일명 : 파일로 추가 저장     
-
-프로세스중인 서버 포트 확인    
-sudo lsof -i:포트번호    
-
-위에서 프로세스아이디 확인 후 서버 킬    
-kill -9 {PID}      
