@@ -11,14 +11,14 @@
 
     ```jsx
     const supertest = require("supertest")
-    const {query1,query2, query3, query4, query5, query6, query7, query8, query9, query10} = require("./testQuery/searchHotplaceQuery")
+    const {query1,query2, query3, query4, query5, query6, query7, query8, query9, query10} = require("./testQuery")
     const server = supertest.agent('http://localhost:16429')
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMTZkYWU2ZDQtN2U3Zi00ZTBkLWJkMDItYzBlNDRjMWRiZTc2IiwiaWF0IjoxNjMwOTg4MDg1LCJleHAiOjE2MzA5OTE2ODV9.RFNwsIz7LufArzOK8_mLpST_xP2HSxnZlaxxrYafhBk"
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.aa.RFNwsIz7LufArzOK8_mLpST_xP2HSxnZlaxxrYafhBk"
 
     describe('레벨1 리스트 찾기', () => {
         it('', (done) => {
             server
-            .post('/api/v1/hotplace/first/level/list')
+            .post('/api/test')
             .set("authorization", token ) // authorization header
             .send( query1 )
             .expect(200)
@@ -201,8 +201,12 @@ Other Options
       --list-interfaces  List built-in user interfaces & exit          [boolean]
       --list-reporters   List built-in reporters & exit                [boolean]
 
+
 Mocha Resources
-    Chat: https://gitter.im/mochajs/mocha
-  GitHub: https://github.com/mochajs/mocha.git
-    Docs: https://mochajs.org/
+Chat: https://gitter.im/mochajs/mocha
+        GitHub: https://github.com/mochajs/mocha.git
+                Docs: https://mochajs.org/
 ```
+
+
+
