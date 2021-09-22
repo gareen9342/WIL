@@ -138,3 +138,68 @@ function solution(numbers) {
   return answer[0] === "0" ? "0" : answer;
 }
 ```
+## 소수 찾기
+
+```javascript
+function next_permutation(a){
+  let i = a.length-1;
+  while(i > 0 && a[i-1] >= a[i]) {
+      i -= 1
+  };
+  if(i<=0) return false; // 마지막 순열 판단하기
+  let j = a.length-1;
+  while(a[j] <= a[i-1]) j -= 1;
+  // === swap;
+  a[j] = [a[i - 1], a[i-1] = a[j]][0];
+    j = a.length - 1
+    while(i < j){
+      a[j] = [a[i], a[i] = a[j]][0]
+        i+=1; j-=1;
+    }
+    // console.log(arr)
+    return true
+}
+function isPrime(n){
+    if(n <= 1){
+        return false;
+    }
+    for (let i = 2; i * i <= n ; i++){
+        if(n % i === 0){
+            return false;
+        }
+    }
+    return true;
+}
+function solution(numbers){
+    const arr = [...numbers];
+    const arrL = arr.length;
+    const primeNums = [];
+
+    for(let i = 1; i < (1 << arrL); i++){
+        let temp = "";
+        for(let j = 0; j<arrL; j++){
+            if(i & (1 << j)){
+                temp += arr[j]
+            }
+        }
+
+        if(temp.length == 1 && isPrime(+temp)){
+            primeNums.push(+temp)
+        }else{
+            const tempArr = [...temp].sort()
+
+            do{
+                const number = +tempArr.join('')
+                if(isPrime(number)){
+                    primeNums.push(number)
+                }
+            }while(next_permutation(tempArr))
+        }
+    }
+    return new Set(primeNums).size
+}
+
+
+console.log(solution("17"))
+console.log(solution("011"))
+```
