@@ -203,3 +203,26 @@ function solution(numbers){
 console.log(solution("17"))
 console.log(solution("011"))
 ```
+
+## 프린터
+```javascript
+function solution(priorities, location) {
+  const pArr = priorities.map((idx, x) => [x, idx]);
+
+  let count = 0;
+  while (pArr.length ) {
+    const temp = pArr[0];
+    const isBiggerExist = pArr.find((x) => x[1] > temp[1]);
+    if (!!isBiggerExist) {
+      pArr.push(temp);
+    } else {
+      count++;
+      if (temp[0] === location) {
+        return count;
+      }
+    }
+    pArr.shift();
+    // console.log(pArr[0]);
+  }
+}
+```
