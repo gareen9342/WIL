@@ -26,7 +26,7 @@ LEFT 혹은 RIGHT쪽의 모든 결과를 보여준 후 반대쪽에 대해는 �
 `SELECT * FROM M, S WHERE (+) M1 = S1;`   
 
 ## NON EQUI JOIN   
-- 테이블의 어떤 컬럼도 JOIN할 테이블의 컬럼과 일치하지 않을 때
+- 테이블의 어떤 컬럼도 JOIN할 테이블의 컬럼과 일치하지 않을 때      
 `SELECT ENAME, SAL, GRADE FROM EMP JOIN SALGRADE ON (SAL BETWEEN LOSAL AND HISAL)`
 
 ## SELF JOIN
