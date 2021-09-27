@@ -211,7 +211,7 @@ const users = await sequelize.query("SELECT * FROM `users`", { type: QueryTypes.
 
 ## Sub Queries
 
-[Sequelize](https://sequelize.org/master/manual/sub-queries.html)
+[Sequelize-서브쿼리 설명](https://sequelize.org/master/manual/sub-queries.html)
 
 sub query와 같은 경우는 findAll의 attributes 에 가지고 올 쿼리문을 sequelize.literal로 넣어주므로서 할 수 있다.
 
@@ -240,8 +240,65 @@ Post.findAll({
 - IFNULL 바꿔보기
 
   IFNULL(columnA, "") → 아래와 같은 예시로 사용할 수 있다.
-``javascript
+
+```javascript
 table1.findAll({
       attributes: [[sequelize.fn('IFNULL', sequelize.col('A.price'), sequelize.col('B.price')]]
     });
 ```
+
+## Transaction
+트랜잭션 사용시에는 sequelize.transaction으로 감싸주고, 함수사용.   
+ORM함수의 옵션에 transaction 을 넘겨주어야 한다. 
+만약, bulk insert 혹은 update 등의 여러 행 입력이나 업데이트 작업 수행시에 트랜젝션처리가 필요하다면,
+
+출처 : https://stackoverflow.com/questions/43967364/sequelize-transaction-bulk-update-followed-by-bulk-create
+https://avengersrhydon1121.tistory.com/224
+
+```javascript
+return sequelize.transaction(function(t){
+  return sequelize.Promise.each(arrToUpdate, function(itemToUpdate){
+    model.update(itemToUpdate, { transaction: t })
+  }).then((updateResult) => {
+    return model.bulkCreate(itemsArray, { transaction: t })
+  }, (err) => {
+    // if update throws an error, handle it here.
+  }); 
+});
+```
+
+트랜잭션은 Managed Transaction / UnMagaged Transaction으로 구분되는데,   
+전자는 커밋, 롤백을 자동으로 관리해주고, 후자는 개발자가 수동으로 관리해야함.
+
+
+```javascript
+const t = await sequelize.transaction();
+
+try {
+
+  // Then, we do some calls passing this transaction as an option:
+
+  const user = await User.create({
+    firstName: 'Bart',
+    lastName: 'Simpson'
+  }, { transaction: t });
+
+  await user.addSibling({
+    firstName: 'Lisa',
+    lastName: 'Simpson'
+  }, { transaction: t });
+
+  // If the execution reaches this line, no errors were thrown.
+  // We commit the transaction.
+  await t.commit();
+
+} catch (error) {
+
+  // If the execution reaches this line, an error was thrown.
+  // We rollback the transaction.
+  await t.rollback();
+
+}
+```
+
+공식문서 : https://sequelize.org/master/manual/transactions.html
