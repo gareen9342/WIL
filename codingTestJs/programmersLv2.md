@@ -226,3 +226,26 @@ function solution(priorities, location) {
   }
 }
 ```
+
+## 땅따먹기
+```javascript
+function solution(s) {
+  var answer = [0, 0];
+
+  while (s !== "1") {
+    const temp = s.split("").sort((a, b) => b - a);
+    const xIdx = temp.indexOf("0");
+
+    answer[1] += xIdx !== -1 ? s.length - xIdx : 0;
+    answer[0]++;
+    if (xIdx !== -1) {
+      s = temp.splice(0, xIdx).length.toString(2);
+      // console.log(s, xIdx);
+    } else {
+      s = s.length.toString(2);
+    }
+  }
+
+  return answer;
+}
+```
