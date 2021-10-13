@@ -227,7 +227,7 @@ function solution(priorities, location) {
 }
 ```
 
-## 땅따먹기
+## 이진변환 반복하기
 ```javascript
 function solution(s) {
   var answer = [0, 0];
