@@ -249,3 +249,24 @@ function solution(s) {
   return answer;
 }
 ```
+
+## 피보나치 수
+
+```javascript
+function solution(num){
+  let x = 1;
+  let y = 1;
+  let sum = 0;
+
+  for(let i = 0; i < num; i++){
+    if (i <= 1) {
+      sum = 1;
+    } else {  
+      sum = (x + y) % 1234567;
+      x = y;
+      y = sum;
+    }
+  }
+  return sum;
+}
+```
