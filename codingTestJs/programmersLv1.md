@@ -154,3 +154,11 @@ function isYacksuJacksu(n) {
   return count % 2 === 0;
 }
 ```
+
+
+## 없는 숫자 더하기
+
+
+````javascript
+const solution = (arr) => arr.reduce((x,y) => x-y, 45)
+````
