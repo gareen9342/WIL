@@ -190,7 +190,31 @@ Post.findAll({
 });
 ```
 
-IN 연산자를 사용할 때 array 안에다가 여러 조건을 쓰게 되면 IN으로 사용할 수 있다.
+- **_IN 연산자를 사용할 때 array 안에다가 여러 조건을 쓰게 되면 IN으로 사용할 수 있다._**
+
+### 날짜 조건 걸기
+> 아래와 같이 lt, gt 등으로 특정 날짜 이후의 값이나 혹은 between 을 쓰거나 등으로 구현 가능
+> 복잡해지면 역시 로우 쿼리를 쓰는 게 낫다. 
+
+```javascript
+User.findAll({
+  where : {
+      createdAt: {
+          [Op.lt] : Date.parse("2021-10-19")
+      }
+  }
+})
+```
+
+### Entity to plain object
+```javascript
+db.Sensors.findAll({
+  where: {
+    nodeid: node.nodeid
+  },
+  raw: true,
+})
+```
 
 ## Raw Queries
 
