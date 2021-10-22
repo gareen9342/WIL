@@ -33,3 +33,20 @@ Promise.allSettled와 같은 경우는 Promise함수의 resolve 값이 fulfilled
 `[{value: 리턴값, status : fulfilled}, ...]`      
 rejected 일 경우에는     
 ` [{ reason : 이유 , status : rejected }, ... ]`
+
+
+## Promise.all with map function
+다량의 I/O처리를 할 때는 이렇게 일단 구현중이다..
+
+```javascript
+const sampleArray = ["a","b","c","d"]
+    
+...
+
+await Promise.all(sampleArray.map(async() => {
+    await Promise1()
+    await Promise2()
+}))
+
+
+```
