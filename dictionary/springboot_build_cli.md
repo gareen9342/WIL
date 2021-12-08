@@ -18,7 +18,7 @@ _(https://essencedrain.tistory.com/4)_
 
 `./mvnw clean package`
 
-(권한은 chmod로 )
+(권한은 `chmod +x mvnw` 로 )
 
 ls -al시 target 디렉토리 있고 이동 후에 
 `java -jar (jar 파일) & (백그라운드 실행시)`
