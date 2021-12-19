@@ -1,8 +1,8 @@
 gitlab container registry with Docker
 
-docker 에서 제공하는 이미지 호스팅 서비스를 도커허브라고 함. 
+docker 에서 제공하는 이미지 호스팅 서비스를 도커허브라고 함.
 
-docker info를 통해 클라이언트에 지정된 기본 레지스트리의 주소를 확인할 수 있다.
+docker hub처럼 깃랩에서 제공하는 container registry를 사용할 수 있음
 
 
 링크   
