@@ -4,3 +4,8 @@
 
 du -s <dirname> :kb로 나온다
 du -sh <dirname> : mb로 나온다. 
+
+## 로그 파일 보기
+  
+cat <filename> | grep -i "string"
+  
