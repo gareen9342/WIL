@@ -57,6 +57,62 @@ class Solution{
 }
 ```
 
-오랜만에 자바로 문제 풀이 했더니 하나도 모르겠다 ㅠㅠ Stream API를 공부해야할듯하다 ㅠ_ㅜ
 
-코테용으로 파이썬을 더 해볼까..ㅠ
+### 더 맵게
+
+이거 풀기위해 우선순위 큐 공부   
+
+
+PriorityQueue : 기본값은 작은 숫자가 우선순위를 가진다,
+문자의 경우 사전순   
+
+추가시   
+
+offer : 큐가 꽉찼을 경우 false 리턴   
+add : 큐가 꽉찼을 경우 예외 발생   
+
+삭제
+
+remove : 예외 발생   
+poll : null리턴
+
+이번에도.. 문제 잘못 읽어서 열심히 삽질했다 문제를 잘 읽자 ^^
+
+javascript일 경우 array shift, unshift 하며 루프마다 sort 로 구현 가능할 듯 
+
+```java
+class Solution {
+  public static int solution(int[] scoville, int K) {
+
+    int count = 0;
+
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+    for(int scov : scoville){
+      pq.offer(scov);
+    }
+      
+    if(pq.peek() >= K){
+      return 0;
+    }
+      
+    while(pq.peek() < K){
+      if(pq.size() == 1) {
+        return -1;   
+      }
+      int first = pq.poll();
+      // System.out.println("first = " + first);
+      int second = pq.poll();
+      // System.out.println("second = " + second);
+      int nowScoville = first + (second * 2); // 섞어주고
+      // System.out.println("nowScoville = " + nowScoville);
+      count+=1;
+      pq.offer(nowScoville);
+      
+    }
+    //  end loop
+    return count;
+  }
+}
+
+```
