@@ -1,0 +1,73 @@
+### add two numbers
+
+
+```java 
+import java.util.*;
+class Solution {
+    
+    private ListNode sumListNodesNumbers(List<Integer> l1Arr, List<Integer> l2Arr){
+        boolean wasOverTen = false;    
+        
+        List<Integer> longer = l1Arr.size()>=l2Arr.size()?l1Arr:l2Arr;
+        List<Integer> shorter = l1Arr.size()>=l2Arr.size()?l2Arr:l1Arr;
+        
+        ListNode prevNode = null;
+        ListNode headNode = null;
+        
+        for(int i=0; i<longer.size(); i++){
+            
+            int numa = i<shorter.size() ? shorter.get(i) : 0; 
+            int sum = numa +longer.get(i) + (wasOverTen?1:0);    
+            wasOverTen = sum >= 10;
+            
+            if(i == 0){
+                headNode = new ListNode(sum%10);    
+                prevNode = tailNode ;    
+            }else{
+                ListNode temp = new ListNode(sum%10);    
+                prevNode.next = temp ;
+                prevNode = temp;
+            }
+            
+        }
+        
+        
+        if(wasOverTen){
+            ListNode temp = new ListNode(1);    
+            prevNode.next = temp ;
+            prevNode = temp;
+        }
+        
+        return headNode;
+    }
+    
+    private List<Integer> listNodeToInt(ListNode ln){
+        ListNode temp = ln;
+        ListNode nextNode;
+        
+        int idx = 0;
+        List<Integer> tempList = new ArrayList<Integer>();
+        
+        while(temp != null){
+            nextNode = temp.next;
+            tempList.add(temp.val);
+            temp = nextNode;
+        }
+        
+        return tempList;
+    }
+    
+    /**
+    각각 더해서 다시 거꾸로 뒤집는다.
+    */
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+       
+        List<Integer> l1Arr = listNodeToInt(l1);
+        List<Integer> l2Arr = listNodeToInt(l2);
+        
+        return sumListNodesNumbers(l1Arr,l2Arr);
+    }
+}
+```
+
+TODO: 리팩토링하고 전체적으로 한번 다시 정리
