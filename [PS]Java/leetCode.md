@@ -81,7 +81,7 @@ https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
 ```java 
 class Solution {
-    public int removeDuplicates(int[] nums) {
+    public int removeDuplicates(int[] nums) {     
         int prevNum = -101;
         int possibleIdx = 0;
         for(int i=0; i<nums.length; i++){
@@ -97,3 +97,34 @@ class Solution {
 }
 
 ```
+
+## palindrome-number
+
+https://leetcode.com/problems/palindrome-number/submissions/
+
+```java
+import java.util.*;
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(x < 0){
+            return false;
+        }
+        
+        String[] tokens = (x+"").split("");
+        int len = tokens.length;
+       
+        
+        // System.out.println(Arrays.toString(tokens));
+        
+        for(int i = 0; i<len/ 2; i++ ){
+                // System.out.println(tokens[i]  + "" + tokens[len-1-i]);
+            
+            if(!tokens[i].equals(tokens[len-1-i])){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+ ```
