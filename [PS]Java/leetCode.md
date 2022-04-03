@@ -71,3 +71,29 @@ class Solution {
 ```
 
 TODO: 리팩토링하고 전체적으로 한번 다시 정리
+
+
+## remove Duplicates from Sorted Array
+
+
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+
+```java 
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int prevNum = -101;
+        int possibleIdx = 0;
+        for(int i=0; i<nums.length; i++){
+            int number = nums[i];
+            if(prevNum != number) {
+                 nums[possibleIdx] = number;
+                 possibleIdx++;
+            }
+            prevNum = number;
+        }
+        return possibleIdx;
+    }
+}
+
+```
