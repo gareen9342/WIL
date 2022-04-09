@@ -128,3 +128,43 @@ class Solution {
     }
 }
  ```
+
+## roman-to-integer
+
+https://leetcode.com/problems/roman-to-integer/
+
+```java
+class Solution {
+    public int romanToInt(String s) {
+        String[] tokens = s.split("");
+        Map<String, Integer> valueMap = new HashMap<String, Integer>();
+        
+        valueMap.put("I",1);
+        valueMap.put("V",5);
+        valueMap.put("X",10);
+        valueMap.put("L",50);
+        valueMap.put("C",100);
+        valueMap.put("D",500);
+        valueMap.put("M",1000);
+        
+        int result = 0;
+        for(int i=0; i< tokens.length; i++){
+            String token = tokens[i];
+            if(i == tokens.length-1){
+                result += valueMap.get(token);
+                break;
+            }
+            
+            if(valueMap.get(token) >= valueMap.get(tokens[i + 1])){
+                result += valueMap.get(token);
+            }else{
+                result -= valueMap.get(token);
+            }
+        }
+        
+        return result;
+    }
+    
+}
+```
+
