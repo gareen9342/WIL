@@ -168,3 +168,47 @@ class Solution {
 }
 ```
 
+## logest-common-prefix
+
+https://leetcode.com/problems/longest-common-prefix/
+
+```java 
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        
+    
+    String extractedPrefix = "";
+    String firstItem = strs[0];
+    boolean isLoopEnd = false;
+
+    for(int i = 0; i<strs[0].length(); i++){
+      if(!isLoopEnd){
+        // 첫 번째 문자의 앞에서 부터 잘라낸 문자열을 반환한다.
+        extractedPrefix = firstItem.substring(0, i + 1);
+//        System.out.println("extractedPrefix = " + extractedPrefix);
+
+        for(int j = 1; j < strs.length; j++){
+
+          String itemStr = strs[j];
+//        System.out.println("itemStr = " + itemStr);
+
+          int prefixIdx = itemStr.indexOf(extractedPrefix);
+//          System.out.println("prefixIdx = " + prefixIdx);
+
+          if(prefixIdx != 0){ // 이때 끝 혹은 루프를 다 돌고 끝
+            isLoopEnd = true;
+            
+            extractedPrefix = firstItem.substring(0, i);
+            break;
+          }
+
+        }
+        // end item for loop
+      }
+      // end char for loop
+
+    }
+    return extractedPrefix;
+    }
+}
+```
