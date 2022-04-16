@@ -212,3 +212,31 @@ class Solution {
     }
 }
 ```
+
+##  Longest Substring Without Repeating Characters
+
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+```java 
+public int longestCommonPrefix(String s){
+
+    String[] strings = s.split("");
+    int max = 0;
+    int idx = 0;
+    String temp = "";
+    for(int i = 0; i<strings.length; i++){
+      String token = strings[i];
+
+      int exIdx = temp.indexOf(token);
+      if(exIdx != -1){
+        max = Math.max(max, temp.length());
+        temp = temp.substring(exIdx + 1);
+      }
+      temp += token;
+    }
+    max = Math.max(max, temp.length());
+    return max;
+  }
+```
+
+...너무 알고리즘이란 개념 없이 막 푼거 아니냐..
