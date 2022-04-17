@@ -240,3 +240,21 @@ public int longestCommonPrefix(String s){
 ```
 
 ...너무 알고리즘이란 개념 없이 막 푼거 아니냐..
+
+## search insert position
+
+https://leetcode.com/problems/search-insert-position/
+
+```
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        for(int i=0; i<nums.length; i++){
+            if(nums[i] >= target){
+                return i ;
+            }
+        }
+        return nums.length;
+    }
+}
+```
+
