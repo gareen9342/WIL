@@ -258,3 +258,49 @@ class Solution {
 }
 ```
 
+## merge two sorted lists
+
+https://leetcode.com/problems/merge-two-sorted-lists/
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        
+        ListNode headNode = new ListNode();
+        ListNode tempNode = headNode;
+        
+        while(list1 != null && list2 != null){
+            
+            if( list2.val > list1.val ){
+                tempNode.next = list1;
+                list1 = list1.next;
+            }else{
+                tempNode.next = list2;
+                list2 = list2.next;
+            }
+            
+            tempNode = tempNode.next;
+            // System.out.println(tempNode.val);
+            
+        }
+        
+        if(list1 != null){
+            tempNode.next = list1;    
+        }else  if(list2 != null){
+            tempNode.next = list2;
+        }
+        
+        return headNode.next ;
+    }
+}
+```
