@@ -304,3 +304,32 @@ class Solution {
     }
 }
 ```
+
+## Maximum Subarray
+
+https://leetcode.com/problems/maximum-subarray/
+
+오늘 Easy단계를 다 뽀갤 것이라 안 올리려 했는데..
+
+사람들꺼 본 이 알고리즘이 새로워서
+
+유명한건가 보다
+
+https://leetcode.com/problems/maximum-subarray/discuss/20211/Accepted-O(n)-solution-in-java
+
+```java 
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int maxNumEndHere = nums[0];
+        int maxSoFar = nums[0];
+        
+        for(int i = 1; i< nums.length; i++){
+            int num = nums[i];
+            maxNumEndHere = Math.max(maxNumEndHere + num, num);
+            maxSoFar= Math.max(maxNumEndHere, maxSoFar);
+        }
+        
+        return maxSoFar;
+    }
+}
+```
