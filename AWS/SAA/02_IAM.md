@@ -14,8 +14,6 @@ JSON Document that outlines permissions for user or groups
 
 IAM Policy Statement -  시드, 효과, 원칙, 조치, 리소스, 그리고 조건으로 구성
 
-_아 한글로 보니까 어렵다_ 
-
 ## IAM Role
 IAM Role은 AWS 서비스가, AWS 에 접근할 떄의 정책을 미한다. 
 
@@ -27,3 +25,33 @@ IAM Role은 AWS 서비스가, AWS 에 접근할 떄의 정책을 미한다.
 
 ### IAM Access Advisor (user-level)
 
+
+## placement group
+
+when yon want control over the EC2 Instance
+
+strategies
+- cluster: low latency, high network throughput, high risk / in single AZ 
+- spread: reduce risk is simultaneous failure and / max 7 instances per AZ / 서로 다른 AZ 에서 안정성 보장 
+- partition / spread instances across multiple AZs 
+  - Haddop, Cassandra, MongoDB, Redis, etc.
+
+## ENI (Elastic Network Interface)
+
+> Elastic Network Interface (ENI) is a logical networking component in the Amazon Virtual Private Cloud (Amazon VPC).
+
+- primary IPv4 1 or more secondary IPv4 addresses
+_- One elastic ip per private IPv4
+- One public IPv4
+- One or more security groups
+- Bound to a specific AZ_
+  탄력적 네트워크 인터페이스(ENI)는 다른 AZ에 있는 EC2 인스턴스와 연결될 수 없음!
+- 특정 AZ 에 국한됨. 
+
+https://aws.amazon.com/blogs/aws/new-elastic-network-interfaces-in-the-virtual-private-cloud/
+
+
+
+### 절전 모드 (Hibernate)
+
+EC2 절전 모드를 활성화하기 위해서는 EC2 인스턴스 루트 볼륨 유형이 EBS 볼륨이어야함
